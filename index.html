@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Plan Price Monitor — ChatGPT, Gemini, Workspace, Claude, Perplexity</title>
+<meta name="description" content="Monitor price, plan and coupon changes for AI subscriptions by country: ChatGPT Free/Go/Plus/Pro/Business, Google AI Plus/Pro/Ultra, Google Workspace with Gemini, Claude Pro, Perplexity Pro, Microsoft 365 Copilot.">
+<style>
+:root{--bg:#f7f7f5;--card:#fff;--text:#1a1a1a;--muted:#666;--line:#e5e5e0;--accent:#0b5fff;--green:#0a7a3d;--amber:#8a5a00}
+*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+header{padding:28px 20px 18px;max-width:1100px;margin:auto} h1{font-size:28px;margin:0 0 6px} p.lede{color:var(--muted);margin:0 0 12px;max-width:820px}
+.badges{display:flex;gap:8px;flex-wrap:wrap} .badge{background:#eef3ff;border:1px solid #d6e2ff;padding:4px 10px;border-radius:999px;font-size:13px}
+main{max-width:1100px;margin:auto;padding:0 20px 48px} section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:14px 0}
+h2{font-size:20px;margin:0 0 10px} h3{font-size:16px;margin:16px 0 6px}
+table{width:100%;border-collapse:collapse;font-size:14px} th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top} th{color:var(--muted);font-weight:600}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0} input,select{padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-size:14px;background:#fff}
+.flag{color:var(--amber);font-weight:600} .live{color:var(--green);font-weight:600} .muted{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px} .card{border:1px solid var(--line);border-radius:10px;padding:12px}
+code{background:#f0f0ee;padding:1px 5px;border-radius:4px}
+footer{max-width:1100px;margin:auto;padding:0 20px 32px;color:var(--muted);font-size:13px}
+@media(max-width:640px){table{font-size:13px} h1{font-size:24px}}
+</style>
+</head>
+<body>
+<header>
+<h1>AI Plan Price Monitor</h1>
+<p class="lede">Price, plan and coupon changes by country — ChatGPT, Gemini, Google Workspace, Claude, Perplexity and Copilot. Prices follow account / payment country, not IP. A foreign Visa does not unlock another country's price.</p>
+<div class="badges">
+<span class="badge">Last checked: <strong id="lastChecked">2026-11-24</strong></span>
+<span class="badge">Only genuine BF 2026 deal: <strong>Google AI Pro $99.99/yr</strong></span>
+<span class="badge">No BF sale: ChatGPT · Claude · Perplexity</span>
+</div>
+</header>
+<main>
+<section>
+<h2>Deals &amp; coupons — live now</h2>
+<div id="deals" class="grid"></div>
+<p class="muted">Google early access 20–26 Nov 2026 is for existing Google AI / Google One subscribers only; general offer from 27 Nov. Buy the annual deal via desktop web at one.google.com/settings — it does not surface in the Gemini mobile app.</p>
+</section>
+
+<section>
+<h2>Cheapest country by tier</h2>
+<div class="controls">
+<label>Plan <select id="planSelect">
+<option value="chatgpt_go_monthly">ChatGPT Go</option>
+<option value="chatgpt_plus_monthly" selected>ChatGPT Plus</option>
+<option value="google_ai_plus_monthly">Google AI Plus</option>
+<option value="google_ai_pro_monthly">Google AI Pro</option>
+<option value="claude_pro_monthly">Claude Pro</option>
+</select></label>
+<label>Country <input id="countryFilter" placeholder="Filter, e.g. Turkey, Vietnam…"></label>
+</div>
+<table><thead><tr><th>Country</th><th>Local price / mo</th><th>≈ USD</th><th>Note</th></tr></thead><tbody id="countryRows"></tbody></table>
+<p class="muted">Monthly App Store prices unless noted as web. USD conversions from 23–24 Nov 2026; local-currency amounts are the stable facts.</p>
+</section>
+
+<section>
+<h2>Plans — what you get</h2>
+<div id="plans"></div>
+</section>
+
+<section>
+<h2>How monitoring works</h2>
+<ul>
+<li><strong>Daily check:</strong> official pricing pages first, then trackers. A change is reported only when the checked value differs from the baseline in <code>data/prices.json</code>.</li>
+<li><strong>Three states:</strong> changed = report + update baseline after the report is confirmed sent; unchanged = silent, no write; unknown = check failed / no data — recorded as “not verified”, never stamped unchanged.</li>
+<li><strong>Watermark:</strong> apply a result only if its check time is newer than that provider's watermark, so a late older result never rolls the baseline back.</li>
+<li><strong>Verify before claiming live:</strong> never report a deal from a coupon site alone — verify on the provider's own page or a dated official announcement.</li>
+</ul>
+<p class="muted">Sources: <a href="https://chatgpt.com/pricing/">chatgpt.com/pricing</a> · <a href="https://one.google.com/ai">one.google.com/ai</a> · <a href="https://workspace.google.com/pricing">workspace.google.com/pricing</a> · <a href="https://claude.com/pricing">claude.com/pricing</a> · <a href="https://www.perplexity.ai/pro">perplexity.ai/pro</a></p>
+</section>
+</main>
+<footer>Data as of 24 Nov 2026, from the research in <code>report.md</code> (AI Plans Black Friday 2026). This is a price monitor, not a store — no checkout here, and no VPN / mismatched-billing workaround is recommended.</footer>
+<script>
+let DATA=null;
+async function load(){const r=await fetch('data/prices.json');DATA=await r.json();document.getElementById('lastChecked').textContent=DATA.meta.last_checked;renderDeals();renderPlans();renderCountries();}
+function renderDeals(){document.getElementById('deals').innerHTML=DATA.deals.map(d=>`<div class="card"><strong>${d.product}</strong><br>${d.regular} → <strong>${d.deal}</strong> <span class="${d.status.includes('live')?'live':'flag'}">${d.status}</span><br><span class="muted">${d.country} · ${d.window}<br>Source: ${d.source}</span></div>`).join('');}
+function renderPlans(){const p=DATA.plans;let h='';for(const [k,v] of Object.entries(p)){h+=`<h3>${k.replaceAll('_',' ')}</h3><table><thead><tr><th>Plan</th><th>US price</th><th>Notes / Gemini access</th></tr></thead><tbody>`+v.map(x=>`<tr><td><strong>${x.plan}</strong></td><td>${x.us_price}</td><td>${x.notes||''} ${x.codex?'<br>Codex: '+x.codex:''} ${x.gemini?'<br>Gemini: '+x.gemini:''}</td></tr>`).join('')+'</tbody></table>';}document.getElementById('plans').innerHTML=h;}
+function renderCountries(){const key=document.getElementById('planSelect').value;const q=(document.getElementById('countryFilter').value||'').toLowerCase();const rows=DATA.countries[key].filter(r=>!q||r.country.toLowerCase().includes(q));document.getElementById('countryRows').innerHTML=rows.map(r=>`<tr><td><strong>${r.country}</strong></td><td>${r.local}</td><td>$${r.usd.toFixed(2)}</td><td>${r.flag?'<span class="flag">'+r.flag+'</span>':''}</td></tr>`).join('')||'<tr><td colspan="4">No match.</td></tr>';}
+document.getElementById('planSelect').addEventListener('change',renderCountries);
+document.getElementById('countryFilter').addEventListener('input',renderCountries);
+load();
+</script>
+</body>
+</html>
