@@ -1,1 +1,492 @@
-{"countries":{"chatgpt_go_monthly":[{"country":"Indonesia","local":"IDR 75,000","usd":4.12},{"country":"India","local":"INR 399","usd":4.29},{"country":"Egypt","local":"EGP 249.99","usd":4.65},{"country":"Philippines","local":"PHP 300","usd":4.7},{"country":"Turkey","local":"TRY 249.99","usd":4.94},{"country":"Vietnam","local":"VND 132,000","usd":5.12},{"country":"United States","local":"$8","usd":8.0}],"chatgpt_plus_monthly":[{"country":"Philippines","local":"PHP 999","usd":15.63},{"country":"Brazil","local":"BRL 99.90","usd":16.8},{"country":"Canada","local":"CAD 24.99","usd":17.48},{"country":"Pakistan","local":"PKR 4,900","usd":17.72},{"country":"Egypt","local":"EGP 999.99","usd":18.74},{"country":"Indonesia","local":"IDR 349,000","usd":19.32},{"country":"Vietnam","local":"VND 499,000","usd":19.34},{"country":"Turkey","local":"TRY 999.99","usd":19.77},{"country":"United States","local":"$19.99","usd":19.99},{"country":"Thailand","local":"THB 699","usd":20.89},{"country":"India","local":"INR 1,999","usd":21.55},{"country":"Mexico","local":"MXN 399","usd":21.51},{"country":"Nigeria","local":"NGN 31,500","usd":23.33},{"country":"Malaysia","local":"MYR 99.90","usd":24.63}],"claude_pro_monthly":[{"country":"Pakistan","local":"PKR 4,900","usd":17.72},{"country":"Egypt","local":"EGP 999.99","usd":19.09},{"country":"Indonesia","local":"IDR 349,000","usd":19.51},{"country":"Turkey","local":"TRY 999.99","usd":20.31},{"country":"Philippines","local":"PHP 1,290","usd":20.54},{"country":"Vietnam","local":"VND 599,000","usd":23.26},{"country":"United States","local":"$20.00","usd":20.0}],"google_ai_plus_monthly":[{"country":"Bolivia (web)","local":"BOB 34.99","usd":2.99},{"country":"Turkey","local":"TRY 199.99","usd":3.95},{"country":"Indonesia","local":"IDR 75,000","usd":4.1},{"country":"Brazil","local":"BRL 24.99","usd":4.2},{"country":"India","local":"INR 399","usd":4.31},{"country":"Philippines","local":"PHP 285","usd":4.47},{"country":"Egypt","local":"EGP 249.99","usd":4.68},{"country":"Vietnam","local":"VND 132,000","usd":5.14},{"country":"United States","local":"$4.99","usd":4.99}],"google_ai_pro_monthly":[{"country":"Bolivia (web)","local":"Bs 139.99","usd":11.97},{"country":"Brazil","local":"BRL 96.90","usd":16.26},{"country":"Indonesia","local":"IDR 309,000","usd":16.98},{"country":"Turkey","flag":"Unresolved TRY 539.99 listing (~$10.70) - do not budget on it","local":"TRY 869.99","usd":17.2},{"country":"Philippines","local":"PHP 1,100","usd":17.28},{"country":"Egypt","local":"EGP 939.99","usd":17.88},{"country":"Vietnam","local":"VND 489,000","usd":19.02},{"country":"United States","local":"$19.99","usd":19.99},{"country":"India","local":"INR 1,950","usd":20.85},{"country":"Nigeria","local":"NGN 28,500","usd":21.4},{"country":"Thailand","local":"THB 750","usd":22.36},{"country":"Malaysia","local":"MYR 97.90","usd":23.97}]},"deals":[{"country":"US","deal":"$99.99/yr first year (~$8.33/mo)","discount":"50%","product":"Google AI Pro (annual)","regular":"$199.99/yr","source":"Google product lead Vikas Kansal, 20 Nov 2026","status":"live","window":"Early access 20-26 Nov 2026 for existing Google AI / Google One subscribers; general offer from 27 Nov 2026"},{"country":"US","deal":"$49.99/yr first year (~$2.50/mo)","discount":"50%","product":"Google AI Plus (annual)","regular":"$99.99/yr","source":"https://slickdeals.net/sh/thread-20365704/","status":"reported-not-officially-confirmed","window":"20-26 Nov, existing subscribers (Slickdeals user report 21 Nov)"},{"country":"Germany","deal":"EUR 109.99/yr first year","discount":"50%","product":"Google AI Pro (annual)","regular":"EUR 219.99/yr","source":"secondary report, not Google's own page","status":"reported-not-officially-confirmed","window":"Black Friday 2026"},{"country":"South Korea","deal":"KRW 145,000","discount":"50% (reported)","product":"Google AI Pro","regular":"KRW 290,000/yr (implied)","source":"secondary report, not Google's own page","status":"reported-not-officially-confirmed","window":"Black Friday 2026"},{"country":"Japan","deal":"JPY 21,800/yr","discount":"~25%","product":"Google AI Pro (annual)","regular":"JPY 29,000/yr","source":"https://en.kocpc.com.tw/archives/27997","status":"reported","window":"20-26 Nov 2026"},{"country":"Worldwide","deal":"+$40 free Computer credits (no price cut)","discount":"0%","product":"Perplexity Pro","regular":"$17/mo billed annually ($20/mo monthly)","source":"https://www.perplexity.ai/pro","status":"live-standing-bonus","window":"Limited time, no end date shown"},{"country":"US","deal":"$13.99 first month / $139.99 first year","discount":"30% first period","product":"Microsoft 365 Premium (Copilot)","regular":"$19.99/mo / $199.99/yr","source":"Microsoft Copilot page","status":"standing-offer-not-BF","window":"No end date stated"},{"country":"Worldwide","deal":"2x included usage on Standard/Premium seats through 31 Dec","discount":"usage-only","product":"ChatGPT Business","regular":"$20/user/mo annual","source":"https://chatgpt.com/pricing/","status":"live","window":"Create workspace by 30 Nov 2026"}],"meta":{"currency_note":"Local prices are list prices as of 23-24 Nov 2026. USD figures are tracker conversions on those dates and drift with FX; local-currency amounts are the stable facts.","last_checked":"2026-11-24","rules":"Price follows account/payment country, not IP. A foreign Visa does not unlock another country's price. VPN + mismatched billing risks suspension. Do not present a coupon-site claim as live without verifying on the provider's own page.","site":"AI Plan Price Monitor","sources":{"chatgpt_pricing":"https://chatgpt.com/pricing/","claude_pricing":"https://claude.com/pricing","google_ai":"https://one.google.com/ai","perplexity_pro":"https://www.perplexity.ai/pro","workspace_pricing":"https://workspace.google.com/pricing"}},"no_sale":["ChatGPT / Codex (Plus, Pro, Team)","Claude Pro / Max / Ultra","Perplexity Pro (price cut)","Microsoft Copilot (genuine Black Friday offer)"],"plans":{"chatgpt":[{"codex":"Limited Codex access","notes":"","plan":"Free","us_price":"$0"},{"codex":"Trial / limited Codex; may include ads","notes":"Cheapest: Indonesia IDR 75,000 ~$4.12/mo","plan":"Go","us_price":"$8/mo"},{"codex":"Included - expanded usage (web, CLI, IDE, iOS)","notes":"Cheapest: Philippines PHP 999 ~$15.63/mo (App Store). App Store annual ~17% off exists.","plan":"Plus","us_price":"$20/mo, monthly only (web)"},{"codex":"5x / 20x Codex usage vs Plus; Pro 500 adds Ultrafast; monthly API credits equal to tier price","notes":"No cheaper country found - USD-priced everywhere checked","plan":"Pro","us_price":"$100 / $200 / $500 per month"},{"codex":"Included","notes":"Standard / Premium seats in 2026 naming","plan":"Business / Team","us_price":"$20/user/mo annual; $25/user/mo monthly (min 2 seats)"},{"codex":"Included","notes":"","plan":"Enterprise / Edu","us_price":"Custom"}],"gemini_consumer":[{"notes":"2 TB storage. Cheapest: Bolivia BOB 34.99 ~$2.99/mo web; Turkey TRY 199.99 ~$3.95 App Store","plan":"Google AI Plus","us_price":"$4.99/mo; $99.99/yr"},{"notes":"Gemini 4 Neon/Hydrogen, Deep Research, 5 TB storage, YouTube Premium Lite, Gemini in Gmail/Docs, $10/mo Google Cloud credits. Cheapest: Bolivia Bs 139.99 ~$11.97/mo web; Brazil R$96.90 ~$16.26 App Store","plan":"Google AI Pro","us_price":"$19.99/mo; $199.99/yr"},{"notes":"Excluded from Black Friday deal. No cheaper country found","plan":"Google AI Ultra","us_price":"$99.99/mo (5x) / $199.99/mo (20x)"}],"gemini_workspace":[{"gemini":"Basic Pro model, 32k context; Gemini in Gmail and Vids only (not Docs/Sheets/Slides/Drive/Meet/Chat); Deep Research 1 report/4h; image 20/day; no video","notes":"Cap 300 users. Regional: India INR 540 ~$6.10, Thailand THB 275 ~$8.50, UK ~GBP 5.90 ~$7.90 (annual, before local tax)","plan":"Business Starter","us_price":"$7/user/mo annual; $8.40 flexible"},{"gemini":"Pro model up to 25 prompts/4h; Thinking up to 80/4h; 1M context; Gemini across Gmail, Docs, Sheets, Slides, Drive, Meet, Chat; Deep Research 5/4h; image 100/day; video up to 3/day","notes":"Sweet spot for teams. Argon model NOT included","plan":"Business Standard","us_price":"$14/user/mo annual; $16.80 flexible"},{"gemini":"Same Gemini as Standard","notes":"Adds Vault, 5 TB storage, bigger Meet","plan":"Business Plus","us_price":"$22/user/mo annual; $26.40 flexible"},{"gemini":"Contact sales","notes":"","plan":"Enterprise","us_price":"Custom"},{"gemini":"Argon model, up to 200 prompts/day; Standard and above only, not Starter","notes":"AI Ultra Access: up to 500/day","plan":"AI Expanded Access add-on","us_price":"No public list price - shown at checkout"}],"other":[{"notes":"Claude Code included. Max $100/mo, Ultra $200/mo. Cheapest: Pakistan PKR 4,900 ~$17.72/mo","plan":"Claude Pro","us_price":"$20/mo; $17/mo billed annually ($200/yr)"},{"notes":"Max $167/mo billed annually. +$40 Computer credits, limited time","plan":"Perplexity Pro","us_price":"$17/mo billed annually; $20/mo monthly"},{"notes":"Personal $9.99/mo; Family $12.99/mo. Standing 30% off first period","plan":"Microsoft 365 Premium (Copilot)","us_price":"$19.99/mo; $199.99/yr"}]}}
+{
+  "countries": {
+    "chatgpt_go_monthly": [
+      {
+        "country": "Indonesia",
+        "local": "IDR 75,000",
+        "usd": 4.12
+      },
+      {
+        "country": "India",
+        "local": "INR 399",
+        "usd": 4.29
+      },
+      {
+        "country": "Egypt",
+        "local": "EGP 249.99",
+        "usd": 4.65
+      },
+      {
+        "country": "Philippines",
+        "local": "PHP 300",
+        "usd": 4.7
+      },
+      {
+        "country": "Turkey",
+        "local": "TRY 249.99",
+        "usd": 4.94
+      },
+      {
+        "country": "Vietnam",
+        "local": "VND 132,000",
+        "usd": 5.12
+      },
+      {
+        "country": "United States",
+        "local": "$8",
+        "usd": 8.0
+      }
+    ],
+    "chatgpt_plus_monthly": [
+      {
+        "country": "Philippines",
+        "local": "PHP 999",
+        "usd": 15.63
+      },
+      {
+        "country": "Brazil",
+        "local": "BRL 99.90",
+        "usd": 16.8
+      },
+      {
+        "country": "Canada",
+        "local": "CAD 24.99",
+        "usd": 17.48
+      },
+      {
+        "country": "Pakistan",
+        "local": "PKR 4,900",
+        "usd": 17.72
+      },
+      {
+        "country": "Egypt",
+        "local": "EGP 999.99",
+        "usd": 18.74
+      },
+      {
+        "country": "Indonesia",
+        "local": "IDR 349,000",
+        "usd": 19.32
+      },
+      {
+        "country": "Vietnam",
+        "local": "VND 499,000",
+        "usd": 19.34
+      },
+      {
+        "country": "Turkey",
+        "local": "TRY 999.99",
+        "usd": 19.77
+      },
+      {
+        "country": "United States",
+        "local": "$19.99",
+        "usd": 19.99
+      },
+      {
+        "country": "Thailand",
+        "local": "THB 699",
+        "usd": 20.89
+      },
+      {
+        "country": "India",
+        "local": "INR 1,999",
+        "usd": 21.55
+      },
+      {
+        "country": "Mexico",
+        "local": "MXN 399",
+        "usd": 21.51
+      },
+      {
+        "country": "Nigeria",
+        "local": "NGN 31,500",
+        "usd": 23.33
+      },
+      {
+        "country": "Malaysia",
+        "local": "MYR 99.90",
+        "usd": 24.63
+      }
+    ],
+    "claude_pro_monthly": [
+      {
+        "country": "Pakistan",
+        "local": "PKR 4,900",
+        "usd": 17.72
+      },
+      {
+        "country": "Egypt",
+        "local": "EGP 999.99",
+        "usd": 19.09
+      },
+      {
+        "country": "Indonesia",
+        "local": "IDR 349,000",
+        "usd": 19.51
+      },
+      {
+        "country": "Turkey",
+        "local": "TRY 999.99",
+        "usd": 20.31
+      },
+      {
+        "country": "Philippines",
+        "local": "PHP 1,290",
+        "usd": 20.54
+      },
+      {
+        "country": "Vietnam",
+        "local": "VND 599,000",
+        "usd": 23.26
+      },
+      {
+        "country": "United States",
+        "local": "$20.00",
+        "usd": 20.0
+      }
+    ],
+    "google_ai_plus_monthly": [
+      {
+        "country": "Bolivia (web)",
+        "local": "BOB 34.99",
+        "usd": 2.99
+      },
+      {
+        "country": "Turkey",
+        "local": "TRY 199.99",
+        "usd": 3.95
+      },
+      {
+        "country": "Indonesia",
+        "local": "IDR 75,000",
+        "usd": 4.1
+      },
+      {
+        "country": "Brazil",
+        "local": "BRL 24.99",
+        "usd": 4.2
+      },
+      {
+        "country": "India",
+        "local": "INR 399",
+        "usd": 4.31
+      },
+      {
+        "country": "Philippines",
+        "local": "PHP 285",
+        "usd": 4.47
+      },
+      {
+        "country": "Egypt",
+        "local": "EGP 249.99",
+        "usd": 4.68
+      },
+      {
+        "country": "Vietnam",
+        "local": "VND 132,000",
+        "usd": 5.14
+      },
+      {
+        "country": "United States",
+        "local": "$4.99",
+        "usd": 4.99
+      }
+    ],
+    "google_ai_pro_monthly": [
+      {
+        "country": "Bolivia (web)",
+        "local": "Bs 139.99",
+        "usd": 11.97
+      },
+      {
+        "country": "Brazil",
+        "local": "BRL 96.90",
+        "usd": 16.26
+      },
+      {
+        "country": "Indonesia",
+        "local": "IDR 309,000",
+        "usd": 16.98
+      },
+      {
+        "country": "Turkey",
+        "flag": "Unresolved TRY 539.99 listing (~$10.70) - do not budget on it",
+        "local": "TRY 869.99",
+        "usd": 17.2
+      },
+      {
+        "country": "Philippines",
+        "local": "PHP 1,100",
+        "usd": 17.28
+      },
+      {
+        "country": "Egypt",
+        "local": "EGP 939.99",
+        "usd": 17.88
+      },
+      {
+        "country": "Vietnam",
+        "local": "VND 489,000",
+        "usd": 19.02
+      },
+      {
+        "country": "United States",
+        "local": "$19.99",
+        "usd": 19.99
+      },
+      {
+        "country": "India",
+        "local": "INR 1,950",
+        "usd": 20.85
+      },
+      {
+        "country": "Nigeria",
+        "local": "NGN 28,500",
+        "usd": 21.4
+      },
+      {
+        "country": "Thailand",
+        "local": "THB 750",
+        "usd": 22.36
+      },
+      {
+        "country": "Malaysia",
+        "local": "MYR 97.90",
+        "usd": 23.97
+      }
+    ]
+  },
+  "deals": [
+    {
+      "country": "US",
+      "deal": "$99.99/yr first year (~$8.33/mo)",
+      "discount": "50%",
+      "product": "Google AI Pro (annual)",
+      "regular": "$199.99/yr",
+      "source": "Google product lead Vikas Kansal, 20 Nov 2026",
+      "status": "live",
+      "window": "Early access 20-26 Nov 2026 for existing Google AI / Google One subscribers; general offer from 27 Nov 2026",
+      "url": "https://one.google.com/ai"
+    },
+    {
+      "country": "US",
+      "deal": "$49.99/yr first year (~$2.50/mo)",
+      "discount": "50%",
+      "product": "Google AI Plus (annual)",
+      "regular": "$99.99/yr",
+      "source": "https://slickdeals.net/sh/thread-20365704/",
+      "status": "reported-not-officially-confirmed",
+      "window": "20-26 Nov, existing subscribers (Slickdeals user report 21 Nov)",
+      "url": "https://one.google.com/ai"
+    },
+    {
+      "country": "Germany",
+      "deal": "EUR 109.99/yr first year",
+      "discount": "50%",
+      "product": "Google AI Pro (annual)",
+      "regular": "EUR 219.99/yr",
+      "source": "secondary report, not Google's own page",
+      "status": "reported-not-officially-confirmed",
+      "window": "Black Friday 2026",
+      "url": "https://one.google.com/ai"
+    },
+    {
+      "country": "South Korea",
+      "deal": "KRW 145,000",
+      "discount": "50% (reported)",
+      "product": "Google AI Pro",
+      "regular": "KRW 290,000/yr (implied)",
+      "source": "secondary report, not Google's own page",
+      "status": "reported-not-officially-confirmed",
+      "window": "Black Friday 2026",
+      "url": "https://one.google.com/ai"
+    },
+    {
+      "country": "Japan",
+      "deal": "JPY 21,800/yr",
+      "discount": "~25%",
+      "product": "Google AI Pro (annual)",
+      "regular": "JPY 29,000/yr",
+      "source": "https://en.kocpc.com.tw/archives/27997",
+      "status": "reported",
+      "window": "20-26 Nov 2026",
+      "url": "https://one.google.com/ai"
+    },
+    {
+      "country": "Worldwide",
+      "deal": "+$40 free Computer credits (no price cut)",
+      "discount": "0%",
+      "product": "Perplexity Pro",
+      "regular": "$17/mo billed annually ($20/mo monthly)",
+      "source": "https://www.perplexity.ai/pro",
+      "status": "live-standing-bonus",
+      "window": "Limited time, no end date shown",
+      "url": "https://www.perplexity.ai/pro"
+    },
+    {
+      "country": "US",
+      "deal": "$13.99 first month / $139.99 first year",
+      "discount": "30% first period",
+      "product": "Microsoft 365 Premium (Copilot)",
+      "regular": "$19.99/mo / $199.99/yr",
+      "source": "Microsoft Copilot page",
+      "status": "standing-offer-not-BF",
+      "window": "No end date stated",
+      "url": "https://www.microsoft.com/en-us/microsoft-365/premium"
+    },
+    {
+      "country": "Worldwide",
+      "deal": "2x included usage on Standard/Premium seats through 31 Dec",
+      "discount": "usage-only",
+      "product": "ChatGPT Business",
+      "regular": "$20/user/mo annual",
+      "source": "https://chatgpt.com/pricing/",
+      "status": "live",
+      "window": "Create workspace by 30 Nov 2026",
+      "url": "https://chatgpt.com/pricing/"
+    }
+  ],
+  "meta": {
+    "currency_note": "Local prices are list prices as of 23-24 Nov 2026. USD figures are tracker conversions on those dates and drift with FX; local-currency amounts are the stable facts.",
+    "last_checked": "2026-11-24",
+    "rules": "Price follows account/payment country, not IP. A foreign Visa does not unlock another country's price. VPN + mismatched billing risks suspension. Do not present a coupon-site claim as live without verifying on the provider's own page.",
+    "site": "AI Plan Price Monitor",
+    "sources": {
+      "chatgpt_pricing": "https://chatgpt.com/pricing/",
+      "claude_pricing": "https://claude.com/pricing",
+      "google_ai": "https://one.google.com/ai",
+      "perplexity_pro": "https://www.perplexity.ai/pro",
+      "workspace_pricing": "https://workspace.google.com/pricing"
+    }
+  },
+  "no_sale": [
+    "ChatGPT / Codex (Plus, Pro, Team)",
+    "Claude Pro / Max / Ultra",
+    "Perplexity Pro (price cut)",
+    "Microsoft Copilot (genuine Black Friday offer)"
+  ],
+  "plans": {
+    "chatgpt": [
+      {
+        "codex": "Limited Codex access",
+        "notes": "",
+        "plan": "Free",
+        "us_price": "$0",
+        "url": "https://chatgpt.com/pricing/"
+      },
+      {
+        "codex": "Trial / limited Codex; may include ads",
+        "notes": "Cheapest: Indonesia IDR 75,000 ~$4.12/mo",
+        "plan": "Go",
+        "us_price": "$8/mo",
+        "url": "https://chatgpt.com/pricing/"
+      },
+      {
+        "codex": "Included - expanded usage (web, CLI, IDE, iOS)",
+        "notes": "Cheapest: Philippines PHP 999 ~$15.63/mo (App Store). App Store annual ~17% off exists.",
+        "plan": "Plus",
+        "us_price": "$20/mo, monthly only (web)",
+        "url": "https://chatgpt.com/pricing/"
+      },
+      {
+        "codex": "5x / 20x Codex usage vs Plus; Pro 500 adds Ultrafast; monthly API credits equal to tier price",
+        "notes": "No cheaper country found - USD-priced everywhere checked",
+        "plan": "Pro",
+        "us_price": "$100 / $200 / $500 per month",
+        "url": "https://chatgpt.com/pricing/"
+      },
+      {
+        "codex": "Included",
+        "notes": "Standard / Premium seats in 2026 naming",
+        "plan": "Business / Team",
+        "us_price": "$20/user/mo annual; $25/user/mo monthly (min 2 seats)",
+        "url": "https://chatgpt.com/pricing/"
+      },
+      {
+        "codex": "Included",
+        "notes": "",
+        "plan": "Enterprise / Edu",
+        "us_price": "Custom",
+        "url": "https://chatgpt.com/pricing/"
+      }
+    ],
+    "gemini_consumer": [
+      {
+        "notes": "2 TB storage. Cheapest: Bolivia BOB 34.99 ~$2.99/mo web; Turkey TRY 199.99 ~$3.95 App Store",
+        "plan": "Google AI Plus",
+        "us_price": "$4.99/mo; $99.99/yr",
+        "url": "https://one.google.com/ai"
+      },
+      {
+        "notes": "Gemini 4 Neon/Hydrogen, Deep Research, 5 TB storage, YouTube Premium Lite, Gemini in Gmail/Docs, $10/mo Google Cloud credits. Cheapest: Bolivia Bs 139.99 ~$11.97/mo web; Brazil R$96.90 ~$16.26 App Store",
+        "plan": "Google AI Pro",
+        "us_price": "$19.99/mo; $199.99/yr",
+        "url": "https://one.google.com/ai"
+      },
+      {
+        "notes": "Excluded from Black Friday deal. No cheaper country found",
+        "plan": "Google AI Ultra",
+        "us_price": "$99.99/mo (5x) / $199.99/mo (20x)",
+        "url": "https://one.google.com/ai"
+      }
+    ],
+    "gemini_workspace": [
+      {
+        "gemini": "Basic Pro model, 32k context; Gemini in Gmail and Vids only (not Docs/Sheets/Slides/Drive/Meet/Chat); Deep Research 1 report/4h; image 20/day; no video",
+        "notes": "Cap 300 users. Regional: India INR 540 ~$6.10, Thailand THB 275 ~$8.50, UK ~GBP 5.90 ~$7.90 (annual, before local tax)",
+        "plan": "Business Starter",
+        "us_price": "$7/user/mo annual; $8.40 flexible",
+        "url": "https://workspace.google.com/pricing"
+      },
+      {
+        "gemini": "Pro model up to 25 prompts/4h; Thinking up to 80/4h; 1M context; Gemini across Gmail, Docs, Sheets, Slides, Drive, Meet, Chat; Deep Research 5/4h; image 100/day; video up to 3/day",
+        "notes": "Sweet spot for teams. Argon model NOT included",
+        "plan": "Business Standard",
+        "us_price": "$14/user/mo annual; $16.80 flexible",
+        "url": "https://workspace.google.com/pricing"
+      },
+      {
+        "gemini": "Same Gemini as Standard",
+        "notes": "Adds Vault, 5 TB storage, bigger Meet",
+        "plan": "Business Plus",
+        "us_price": "$22/user/mo annual; $26.40 flexible",
+        "url": "https://workspace.google.com/pricing"
+      },
+      {
+        "gemini": "Contact sales",
+        "notes": "",
+        "plan": "Enterprise",
+        "us_price": "Custom",
+        "url": "https://workspace.google.com/pricing"
+      },
+      {
+        "gemini": "Argon model, up to 200 prompts/day; Standard and above only, not Starter",
+        "notes": "AI Ultra Access: up to 500/day",
+        "plan": "AI Expanded Access add-on",
+        "us_price": "No public list price - shown at checkout",
+        "url": "https://workspace.google.com/pricing"
+      }
+    ],
+    "other": [
+      {
+        "notes": "Claude Code included. Max $100/mo, Ultra $200/mo. Cheapest: Pakistan PKR 4,900 ~$17.72/mo",
+        "plan": "Claude Pro",
+        "us_price": "$20/mo; $17/mo billed annually ($200/yr)",
+        "url": "https://claude.com/pricing"
+      },
+      {
+        "notes": "Max $167/mo billed annually. +$40 Computer credits, limited time",
+        "plan": "Perplexity Pro",
+        "us_price": "$17/mo billed annually; $20/mo monthly",
+        "url": "https://www.perplexity.ai/pro"
+      },
+      {
+        "notes": "Personal $9.99/mo; Family $12.99/mo. Standing 30% off first period",
+        "plan": "Microsoft 365 Premium (Copilot)",
+        "us_price": "$19.99/mo; $199.99/yr",
+        "url": "https://www.microsoft.com/en-us/microsoft-365/premium"
+      }
+    ]
+  }
+}
