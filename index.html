@@ -17,6 +17,12 @@ table{width:100%;border-collapse:collapse;font-size:14px} th,td{text-align:left;
 .controls{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0} input,select{padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-size:14px;background:#fff}
 .flag{color:var(--amber);font-weight:600} .live{color:var(--green);font-weight:600} .muted{color:var(--muted);font-size:13px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px} .card{border:1px solid var(--line);border-radius:10px;padding:12px}
+a.card-link{display:block;color:inherit;text-decoration:none;border-radius:10px} a.card-link:hover .card{border-color:var(--accent);box-shadow:0 1px 6px rgba(0,0,0,.08)} a.card-link .card{height:100%;display:flex;flex-direction:column;gap:6px}
+.deal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8px} .deal-head strong{font-size:16px}
+.pill{flex:none;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap} .live{background:#e6f4ea} .flag{background:#fff3d6}
+.deal-price{font-size:19px} .deal-price .was{color:var(--muted);text-decoration:line-through;font-weight:400;font-size:14px}
+.visit{margin-top:auto;padding-top:8px;border-top:1px solid var(--line);color:var(--accent);font-weight:600;font-size:13px}
+table a{color:var(--accent)}
 code{background:#f0f0ee;padding:1px 5px;border-radius:4px}
 footer{max-width:1100px;margin:auto;padding:0 20px 32px;color:var(--muted);font-size:13px}
 @media(max-width:640px){table{font-size:13px} h1{font-size:24px}}
@@ -143,7 +149,7 @@ function renderDeals() {
     const status = t(`status.${d.status}`);
     const cls = d.status.includes("live") ? "live" : "flag";
     const win = get(I18N, `deals.${d.product}|${d.country}`) ?? d.window;
-    return `<div class="card"><strong>${esc(d.product)}</strong><br>${esc(d.regular)} → <strong>${esc(d.deal)}</strong> <span class="${cls}">${esc(status)}</span><br><span class="muted">${esc(d.country)} · ${esc(win)}<br>${esc(t("labels.source"))}: ${esc(d.source)}</span></div>`;
+    return `<a class="card-link" href="${esc(d.url || "#")}" target="_blank" rel="noopener"><div class="card"><div class="deal-head"><strong>${esc(d.product)}</strong><span class="pill ${cls}">${esc(status)}</span></div><div class="deal-price"><span class="was">${esc(d.regular)}</span> → <strong>${esc(d.deal)}</strong></div><div class="muted">${esc(d.country)} · ${esc(win)}</div><div class="muted">${esc(t("labels.source"))}: ${esc(d.source)}</div><div class="visit">${esc(t("labels.visit"))} →</div></div></a>`;
   }).join("");
 }
 function renderPlans() {
@@ -156,7 +162,7 @@ function renderPlans() {
         const codex = planText(k, x.plan, "codex");
         const gemini = planText(k, x.plan, "gemini");
         const cell = [notes, codex ? `<br>${esc(t("labels.codex"))}: ${esc(codex)}` : "", gemini ? `<br>${esc(t("labels.gemini"))}: ${esc(gemini)}` : ""].join("");
-        return `<tr><td><strong>${esc(x.plan)}</strong></td><td>${esc(x.us_price)}</td><td>${cell}</td></tr>`;
+        return `<tr><td><strong>${x.url ? `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.plan)} ↗</a>` : esc(x.plan)}</strong></td><td>${esc(x.us_price)}</td><td>${cell}</td></tr>`;
       }).join("") + `</tbody></table>`;
   }
   document.getElementById("plans").innerHTML = h;
