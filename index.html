@@ -10,6 +10,7 @@
 *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
 header{padding:28px 20px 18px;max-width:1100px;margin:auto} h1{font-size:28px;margin:0 0 6px} p.lede{color:var(--muted);margin:0 0 12px;max-width:820px}
 .badges{display:flex;gap:8px;flex-wrap:wrap} .badge{background:#eef3ff;border:1px solid #d6e2ff;padding:4px 10px;border-radius:999px;font-size:13px}
+.lang-switch{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px} .lang-switch button{padding:5px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:13px;cursor:pointer;color:var(--text)} .lang-switch button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
 main{max-width:1100px;margin:auto;padding:0 20px 48px} section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:14px 0}
 h2{font-size:20px;margin:0 0 10px} h3{font-size:16px;margin:16px 0 6px}
 table{width:100%;border-collapse:collapse;font-size:14px} th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top} th{color:var(--muted);font-weight:600}
@@ -23,62 +24,181 @@ footer{max-width:1100px;margin:auto;padding:0 20px 32px;color:var(--muted);font-
 </head>
 <body>
 <header>
-<h1>AI Plan Price Monitor</h1>
-<p class="lede">Price, plan and coupon changes by country — ChatGPT, Gemini, Google Workspace, Claude, Perplexity and Copilot. Prices follow account / payment country, not IP. A foreign Visa does not unlock another country's price.</p>
+<div class="lang-switch" id="langSwitch" role="group" aria-label="Language">
+<button type="button" data-lang="en">English</button>
+<button type="button" data-lang="zh">中文</button>
+<button type="button" data-lang="ja">日本語</button>
+<button type="button" data-lang="es">Español</button>
+</div>
+<h1 data-i18n="header.title">AI Plan Price Monitor</h1>
+<p class="lede" data-i18n="header.lede">Price, plan and coupon changes by country — ChatGPT, Gemini, Google Workspace, Claude, Perplexity and Copilot. Prices follow account / payment country, not IP. A foreign Visa does not unlock another country's price.</p>
 <div class="badges">
-<span class="badge">Last checked: <strong id="lastChecked">2026-11-24</strong></span>
-<span class="badge">Only genuine BF 2026 deal: <strong>Google AI Pro $99.99/yr</strong></span>
-<span class="badge">No BF sale: ChatGPT · Claude · Perplexity</span>
+<span class="badge"><span data-i18n="badges.last_checked">Last checked:</span> <strong id="lastChecked">2026-11-24</strong></span>
+<span class="badge"><span data-i18n="badges.bf_deal">Only genuine BF 2026 deal:</span> <strong data-i18n="badges.bf_deal_value">Google AI Pro $99.99/yr</strong></span>
+<span class="badge" data-i18n="badges.no_bf">No BF sale: ChatGPT · Claude · Perplexity</span>
 </div>
 </header>
 <main>
 <section>
-<h2>Deals &amp; coupons — live now</h2>
+<h2 data-i18n="sections.deals">Deals &amp; coupons — live now</h2>
 <div id="deals" class="grid"></div>
-<p class="muted">Google early access 20–26 Nov 2026 is for existing Google AI / Google One subscribers only; general offer from 27 Nov. Buy the annual deal via desktop web at one.google.com/settings — it does not surface in the Gemini mobile app.</p>
+<p class="muted" data-i18n="deals_note">Google early access 20–26 Nov 2026 is for existing Google AI / Google One subscribers only; general offer from 27 Nov. Buy the annual deal via desktop web at one.google.com/settings — it does not surface in the Gemini mobile app.</p>
 </section>
 
 <section>
-<h2>Cheapest country by tier</h2>
+<h2 data-i18n="sections.cheapest">Cheapest country by tier</h2>
 <div class="controls">
-<label>Plan <select id="planSelect">
-<option value="chatgpt_go_monthly">ChatGPT Go</option>
-<option value="chatgpt_plus_monthly" selected>ChatGPT Plus</option>
-<option value="google_ai_plus_monthly">Google AI Plus</option>
-<option value="google_ai_pro_monthly">Google AI Pro</option>
-<option value="claude_pro_monthly">Claude Pro</option>
-</select></label>
-<label>Country <input id="countryFilter" placeholder="Filter, e.g. Turkey, Vietnam…"></label>
+<label><span data-i18n="controls.plan">Plan</span> <select id="planSelect"></select></label>
+<label><span data-i18n="controls.country">Country</span> <input id="countryFilter" data-i18n-placeholder="controls.country_placeholder" placeholder="Filter, e.g. Turkey, Vietnam…"></label>
 </div>
-<table><thead><tr><th>Country</th><th>Local price / mo</th><th>≈ USD</th><th>Note</th></tr></thead><tbody id="countryRows"></tbody></table>
-<p class="muted">Monthly App Store prices unless noted as web. USD conversions from 23–24 Nov 2026; local-currency amounts are the stable facts.</p>
+<table><thead><tr><th data-i18n="table.country">Country</th><th data-i18n="table.local">Local price / mo</th><th data-i18n="table.usd">≈ USD</th><th data-i18n="table.note">Note</th></tr></thead><tbody id="countryRows"></tbody></table>
+<p class="muted" data-i18n="currency_note">Monthly App Store prices unless noted as web. USD conversions from 23–24 Nov 2026; local-currency amounts are the stable facts.</p>
 </section>
 
 <section>
-<h2>Plans — what you get</h2>
+<h2 data-i18n="sections.plans">Plans — what you get</h2>
 <div id="plans"></div>
 </section>
 
 <section>
-<h2>How monitoring works</h2>
-<ul>
-<li><strong>Daily check:</strong> official pricing pages first, then trackers. A change is reported only when the checked value differs from the baseline in <code>data/prices.json</code>.</li>
-<li><strong>Three states:</strong> changed = report + update baseline after the report is confirmed sent; unchanged = silent, no write; unknown = check failed / no data — recorded as “not verified”, never stamped unchanged.</li>
-<li><strong>Watermark:</strong> apply a result only if its check time is newer than that provider's watermark, so a late older result never rolls the baseline back.</li>
-<li><strong>Verify before claiming live:</strong> never report a deal from a coupon site alone — verify on the provider's own page or a dated official announcement.</li>
-</ul>
-<p class="muted">Sources: <a href="https://chatgpt.com/pricing/">chatgpt.com/pricing</a> · <a href="https://one.google.com/ai">one.google.com/ai</a> · <a href="https://workspace.google.com/pricing">workspace.google.com/pricing</a> · <a href="https://claude.com/pricing">claude.com/pricing</a> · <a href="https://www.perplexity.ai/pro">perplexity.ai/pro</a></p>
+<h2 data-i18n="sections.how">How monitoring works</h2>
+<ul id="howList"></ul>
+<p class="muted"><span data-i18n="sources_label">Sources:</span> <a href="https://chatgpt.com/pricing/">chatgpt.com/pricing</a> · <a href="https://one.google.com/ai">one.google.com/ai</a> · <a href="https://workspace.google.com/pricing">workspace.google.com/pricing</a> · <a href="https://claude.com/pricing">claude.com/pricing</a> · <a href="https://www.perplexity.ai/pro">perplexity.ai/pro</a></p>
 </section>
 </main>
-<footer>Data as of 24 Nov 2026, from the research in <code>report.md</code> (AI Plans Black Friday 2026). This is a price monitor, not a store — no checkout here, and no VPN / mismatched-billing workaround is recommended.</footer>
+<footer data-i18n="footer">Data as of 24 Nov 2026, from the research in report.md (AI Plans Black Friday 2026). This is a price monitor, not a store — no checkout here, and no VPN / mismatched-billing workaround is recommended.</footer>
 <script>
-let DATA=null;
-async function load(){const r=await fetch('data/prices.json');DATA=await r.json();document.getElementById('lastChecked').textContent=DATA.meta.last_checked;renderDeals();renderPlans();renderCountries();}
-function renderDeals(){document.getElementById('deals').innerHTML=DATA.deals.map(d=>`<div class="card"><strong>${d.product}</strong><br>${d.regular} → <strong>${d.deal}</strong> <span class="${d.status.includes('live')?'live':'flag'}">${d.status}</span><br><span class="muted">${d.country} · ${d.window}<br>Source: ${d.source}</span></div>`).join('');}
-function renderPlans(){const p=DATA.plans;let h='';for(const [k,v] of Object.entries(p)){h+=`<h3>${k.replaceAll('_',' ')}</h3><table><thead><tr><th>Plan</th><th>US price</th><th>Notes / Gemini access</th></tr></thead><tbody>`+v.map(x=>`<tr><td><strong>${x.plan}</strong></td><td>${x.us_price}</td><td>${x.notes||''} ${x.codex?'<br>Codex: '+x.codex:''} ${x.gemini?'<br>Gemini: '+x.gemini:''}</td></tr>`).join('')+'</tbody></table>';}document.getElementById('plans').innerHTML=h;}
-function renderCountries(){const key=document.getElementById('planSelect').value;const q=(document.getElementById('countryFilter').value||'').toLowerCase();const rows=DATA.countries[key].filter(r=>!q||r.country.toLowerCase().includes(q));document.getElementById('countryRows').innerHTML=rows.map(r=>`<tr><td><strong>${r.country}</strong></td><td>${r.local}</td><td>$${r.usd.toFixed(2)}</td><td>${r.flag?'<span class="flag">'+r.flag+'</span>':''}</td></tr>`).join('')||'<tr><td colspan="4">No match.</td></tr>';}
-document.getElementById('planSelect').addEventListener('change',renderCountries);
-document.getElementById('countryFilter').addEventListener('input',renderCountries);
+const LANGS = { en: "English", zh: "中文", ja: "日本語", es: "Español" };
+const LS_KEY = "ai-plan-monitor-lang";
+let LANG = "en";
+let DATA = null, I18N = null, FALLBACK = null;
+
+function resolveLang() {
+  const q = new URLSearchParams(location.search).get("lang");
+  if (q && LANGS[q]) return q;
+  try { const s = localStorage.getItem(LS_KEY); if (s && LANGS[s]) return s; } catch (e) {}
+  const nav = (navigator.language || "en").toLowerCase();
+  if (nav.startsWith("zh")) return "zh";
+  if (nav.startsWith("ja")) return "ja";
+  if (nav.startsWith("es")) return "es";
+  return "en";
+}
+function get(obj, path) {
+  return path.split(".").reduce((o, k) => (o && o[k] !== undefined ? o[k] : undefined), obj);
+}
+function t(path) {
+  const v = get(I18N, path);
+  if (v !== undefined) return v;
+  const f = get(FALLBACK, path);
+  return f !== undefined ? f : path;
+}
+function esc(s) {
+  return String(s).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
+}
+function planText(group, plan, field) {
+  const v = get(I18N, `plans.${group}.${plan}.${field}`);
+  if (v !== undefined) return v;
+  const f = get(FALLBACK, `plans.${group}.${plan}.${field}`);
+  return f !== undefined ? f : "";
+}
+
+async function load() {
+  LANG = resolveLang();
+  document.documentElement.lang = LANG;
+  const [data, i18n, fallback] = await Promise.all([
+    fetch("data/prices.json").then(r => r.json()),
+    fetch(`data/i18n/${LANG}.json`).then(r => r.json()),
+    LANG === "en" ? Promise.resolve(null) : fetch("data/i18n/en.json").then(r => r.json()),
+  ]);
+  DATA = data; I18N = i18n; FALLBACK = fallback || i18n;
+  document.title = t("meta.title");
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.setAttribute("content", t("meta.description"));
+  document.getElementById("lastChecked").textContent = DATA.meta.last_checked;
+  buildPlanSelect();
+  applyStatic();
+  renderAll();
+  markSwitcher();
+}
+function applyStatic() {
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const v = t(el.getAttribute("data-i18n"));
+    if (el.tagName === "FOOTER") el.innerHTML = esc(v).replaceAll("report.md", "<code>report.md</code>");
+    else el.textContent = v;
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    el.setAttribute("placeholder", t(el.getAttribute("data-i18n-placeholder")));
+  });
+  document.getElementById("howList").innerHTML = (I18N.how || []).map(
+    item => `<li><strong>${esc(item.title)}</strong> ${esc(item.text)}</li>`).join("");
+}
+function buildPlanSelect() {
+  const sel = document.getElementById("planSelect");
+  const names = get(I18N, "controls.plan_names") || {};
+  const keys = Object.keys(DATA.countries);
+  sel.innerHTML = keys.map(k => `<option value="${esc(k)}"${k === "chatgpt_plus_monthly" ? " selected" : ""}>${esc(names[k] || k)}</option>`).join("");
+}
+function renderDeals() {
+  document.getElementById("deals").innerHTML = DATA.deals.map(d => {
+    const status = t(`status.${d.status}`);
+    const cls = d.status.includes("live") ? "live" : "flag";
+    const win = get(I18N, `deals.${d.product}|${d.country}`) ?? d.window;
+    return `<div class="card"><strong>${esc(d.product)}</strong><br>${esc(d.regular)} → <strong>${esc(d.deal)}</strong> <span class="${cls}">${esc(status)}</span><br><span class="muted">${esc(d.country)} · ${esc(win)}<br>${esc(t("labels.source"))}: ${esc(d.source)}</span></div>`;
+  }).join("");
+}
+function renderPlans() {
+  const p = DATA.plans;
+  let h = "";
+  for (const [k, v] of Object.entries(p)) {
+    h += `<h3>${esc(t(`groups.${k}`))}</h3><table><thead><tr><th>${esc(t("table.plan"))}</th><th>${esc(t("table.us_price"))}</th><th>${esc(t("table.notes"))}</th></tr></thead><tbody>` +
+      v.map(x => {
+        const notes = planText(k, x.plan, "notes");
+        const codex = planText(k, x.plan, "codex");
+        const gemini = planText(k, x.plan, "gemini");
+        const cell = [notes, codex ? `<br>${esc(t("labels.codex"))}: ${esc(codex)}` : "", gemini ? `<br>${esc(t("labels.gemini"))}: ${esc(gemini)}` : ""].join("");
+        return `<tr><td><strong>${esc(x.plan)}</strong></td><td>${esc(x.us_price)}</td><td>${cell}</td></tr>`;
+      }).join("") + `</tbody></table>`;
+  }
+  document.getElementById("plans").innerHTML = h;
+}
+function renderCountries() {
+  const key = document.getElementById("planSelect").value;
+  const q = (document.getElementById("countryFilter").value || "").toLowerCase();
+  const rows = DATA.countries[key].filter(r => !q || r.country.toLowerCase().includes(q));
+  document.getElementById("countryRows").innerHTML = rows.map(r => {
+    const flag = get(I18N, `country_flags.${key}|${r.country}`) || r.flag || "";
+    return `<tr><td><strong>${esc(r.country)}</strong></td><td>${esc(r.local)}</td><td>$${r.usd.toFixed(2)}</td><td>${flag ? `<span class="flag">${esc(flag)}</span>` : ""}</td></tr>`;
+  }).join("") || `<tr><td colspan="4">${esc(t("table.no_match"))}</td></tr>`;
+}
+function renderAll() { renderDeals(); renderPlans(); renderCountries(); }
+function markSwitcher() {
+  document.querySelectorAll("#langSwitch button").forEach(b => {
+    b.setAttribute("aria-pressed", b.getAttribute("data-lang") === LANG ? "true" : "false");
+  });
+}
+async function setLang(lang) {
+  if (!LANGS[lang] || lang === LANG) return;
+  LANG = lang;
+  try { localStorage.setItem(LS_KEY, lang); } catch (e) {}
+  const url = new URL(location.href);
+  url.searchParams.set("lang", lang);
+  history.replaceState(null, "", url);
+  I18N = await fetch(`data/i18n/${lang}.json`).then(r => r.json());
+  document.documentElement.lang = lang;
+  document.title = t("meta.title");
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.setAttribute("content", t("meta.description"));
+  buildPlanSelect();
+  applyStatic();
+  renderAll();
+  markSwitcher();
+}
+document.getElementById("planSelect").addEventListener("change", renderCountries);
+document.getElementById("countryFilter").addEventListener("input", renderCountries);
+document.getElementById("langSwitch").addEventListener("click", e => {
+  const b = e.target.closest("button[data-lang]");
+  if (b) setLang(b.getAttribute("data-lang"));
+});
 load();
 </script>
 </body>
